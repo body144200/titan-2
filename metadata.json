@@ -1,0 +1,9 @@
+{
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "name": "TitanChat Web",
+  "description": "",
+  "prompt": ""
+}

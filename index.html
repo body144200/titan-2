@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TitanChat Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        // darkMode: 'class', // Removed, handled by JS adding 'dark' class to html element
+        theme: {
+          extend: {
+            colors: {
+              // Messenger-inspired calm colors with light blue accent
+              primary: 'hsl(207, 75%, 58%)', // Light blue for active elements, icons
+              accent: {
+                DEFAULT: 'hsl(207, 75%, 58%)', // Light blue for sent messages, unread dots, main accent
+                hover: 'hsl(207, 75%, 65%)',
+              },
+              background: {
+                light: '#FFFFFF', // Main app background
+                dark: 'hsl(220, 15%, 10%)', // Dark mode app background
+                sidebar: {
+                  light: '#F0F2F5', // Sidebar background (chat list area)
+                  dark: 'hsl(220, 15%, 12%)',
+                },
+                sidebarNav: { // For the new nav icon area within the sidebar
+                  light: '#FFFFFF',
+                  dark: 'hsl(220, 15%, 15%)',
+                },
+                chat: {
+                  light: '#FFFFFF', // Chat area background
+                  dark: 'hsl(220, 15%, 15%)', // Matches sidebarNav dark for consistency
+                },
+                input: {
+                  light: '#F0F2F5', // Message input background
+                  dark: 'hsl(220, 15%, 20%)',
+                },
+                selected: {
+                  light: '#E9EBEF', // Selected chat item
+                  dark: 'hsl(210, 10%, 23%)', // Adjusted for better contrast with light blue
+                },
+                hover: {
+                  light: '#E4E6EB',
+                  dark: 'hsl(220, 10%, 20%)',
+                },
+                page: { // For overall page backgrounds like login
+                  light: '#F0F2F5', 
+                  dark: 'hsl(220, 15%, 10%)', // Same as app background dark
+                }
+              },
+              text: {
+                light: '#050505', // Primary text (blackish)
+                dark: 'hsl(0, 0%, 90%)',
+                secondary: {
+                  light: '#65676B', // Secondary text (gray)
+                  dark: 'hsl(0, 0%, 70%)',
+                },
+                white: '#FFFFFF', // For text on dark backgrounds like sent messages
+                placeholder: {
+                  light: '#8A8D91', // Slightly lighter placeholder
+                  dark: 'hsl(0, 0%, 60%)',
+                },
+                link: 'hsl(207, 75%, 58%)', // Light blue for links
+              },
+              message: {
+                sent: {
+                  light: 'hsl(207, 75%, 58%)', // Light blue
+                  dark: 'hsl(207, 70%, 48%)', // Slightly darker blue for dark mode
+                },
+                received: {
+                  light: '#E4E6EB', // Light gray
+                  dark: 'hsl(210, 10%, 28%)',
+                }
+              },
+              border: {
+                light: '#CED0D4',
+                dark: 'hsl(210, 10%, 22%)', // Adjusted for better harmony
+              },
+              icon: {
+                light: '#65676B', // Default icon color
+                dark: 'hsl(0, 0%, 70%)',
+                active: 'hsl(207, 75%, 58%)', // Light blue for active icons
+              },
+              messengerBlue: {
+                DEFAULT: '#1877F2', // Facebook/Messenger Blue
+                hover: '#166FE5', // A slightly darker shade for hover
+              },
+              successGreen: { // For "Create New Account" button example
+                DEFAULT: '#42B72A',
+                hover: '#36A420',
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-background-page-light dark:bg-background-page-dark text-text-light dark:text-text-dark transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="index.tsx?t=${new Date().getTime()}"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
